@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ProjectBox from './project-box'
 
 const ProjectList: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState(-3)
@@ -94,10 +95,10 @@ const ProjectList: React.FC = () => {
           </select>
 
           <div style={{
-            height: '20px', // Adjust height to match the select height
+            height: '20px',
             width: '1px',
             backgroundColor: 'black',
-            margin: '0 10px' // Space around the separator
+            margin: '0 10px' 
           }} />
 
           <button style={{
@@ -108,6 +109,8 @@ const ProjectList: React.FC = () => {
             All Filters
           </button>
         </div>
+
+        <ProjectBox/>
     </div>
   )
 }
