@@ -1,0 +1,29 @@
+.card {
+    border-radius: 10px;
+    height: 200px;
+    margin: 10px 20px;
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    align-items: left;
+    background-color: #ddd;
+}
+
+.image {
+    border-radius: 10px;
+    background: #aaa;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.description {
+    border-radius: 10px;
+    background-color: #bbb;
+    padding: 10px;
+    width: fit-content;
+    flex-grow: 1;
+    align-items: center;
+}
