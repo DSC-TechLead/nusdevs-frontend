@@ -1,0 +1,31 @@
+.navbar {
+    height: 100px;
+    display: flex;
+    padding: 0 150px;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+    background: #dddddd;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+}
+
+.searchbar {
+    flex-grow: 1;
+    line-height: 1.5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: grey;
+    background: darkgrey;
+    border: 1px solid grey;
+}
+.searchbar:hover {
+    box-shadow: 0 0 0 0.5px #555;
+}
+.searchbar:focus {
+    box-shadow: 0 0 0 0.6px #555;
+    outline: none;
+}
