@@ -23,20 +23,9 @@ const ProjectList: React.FC = () => {
           Search
         </button>
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          padding: "10px",
-          maxWidth: "100%",
-          overflow: "hidden",
-          justifyContent: "center",
-        }}
-      >
+      <div className="flex items-center p-2 max-w-full overflow-hidden justify-center">
         <select
-          style={{
-            borderRadius: "30px",
-          }}
+          className="rounded-full px-4 py-2 pr-8"
           value={selectedOption}
           onChange={(e) => {
             const inputValue = Number(e.target.value);
@@ -48,20 +37,10 @@ const ProjectList: React.FC = () => {
           <option value={-1}>Item 3</option>
         </select>
 
-        <div
-          style={{
-            height: "20px",
-            width: "1px",
-            backgroundColor: "black",
-            margin: "0 10px",
-          }}
-        />
+        <div className="h-10 w-px bg-black mx-2"></div>
 
         <select
-          style={{
-            borderRadius: "30px",
-            marginRight: "10px",
-          }}
+          className="rounded-full px-4 py-2 mr-2"
           value={selectedLanguage}
           onChange={(e) => {
             const inputValue = Number(e.target.value);
@@ -74,9 +53,7 @@ const ProjectList: React.FC = () => {
         </select>
 
         <select
-          style={{
-            borderRadius: "30px",
-          }}
+          className="rounded-full px-4 py-2 pr-8"
           value={selectedSort}
           onChange={(e) => {
             const inputValue = Number(e.target.value);
@@ -86,22 +63,9 @@ const ProjectList: React.FC = () => {
           <option value={-3}>Date posted</option>
         </select>
 
-        <div
-          style={{
-            height: "20px",
-            width: "1px",
-            backgroundColor: "black",
-            margin: "0 10px",
-          }}
-        />
+        <div className="h-10 w-px bg-black mx-2"></div>
 
-        <button
-          style={{
-            borderRadius: "30px",
-            backgroundColor: "white",
-            border: "1px solid",
-          }}
-        >
+        <button className="rounded-full bg-white border px-4 py-2">
           All Filters
         </button>
       </div>
