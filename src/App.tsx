@@ -1,12 +1,10 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import AppPage from "./application_page/page";
+import RadioSelect from "./radioSelect";
 
 function App() {
   return (
     <div className="App">
-      <AppPage />
+      <RadioSelect />
     </div>
   );
 }
