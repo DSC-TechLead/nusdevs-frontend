@@ -11,7 +11,7 @@ const RadioSelect: React.FC = () => {
         Single Select Question
       </legend>
       <p className="text-left text-sm/6 text-gray-600">Description</p>
-      <div className="mt-3 space-y-1">
+      <div className="mt-2 space-y-1">
         {radioSelections.map((radioSeletion) => (
           <div key={radioSeletion.id} className="flex items-center">
             <input

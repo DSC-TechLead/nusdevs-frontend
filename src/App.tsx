@@ -1,10 +1,14 @@
 import "./App.css";
-import RadioSelect from "./radioSelect";
+import CheckSelect from "./components/checkSelect";
+import RadioSelect from "./components/radioSelect";
 
 function App() {
   return (
     <div className="App">
-      <RadioSelect />
+      <div className="space-y-5">
+        <RadioSelect />
+        <CheckSelect />
+      </div>
     </div>
   );
 }
