@@ -56,19 +56,28 @@
   }
 }
 
-html {
-  font-family: "Inter", sans-serif; /* Set Inter globally */
-}
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: inherit; /* Ensures body inherits font from html */
-}
-
 @layer base {
-  * {
-    @apply border-border;
+
+  html {
+    font-family: "Inter", sans-serif; /* Set Inter globally */
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: inherit; /* Ensures body inherits font from html */
+  }
+}
+
+/* Tailwind component preset styles */
+@layer components {
+  /* -- Base Styles -- */
+  .btn {
+    @apply flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium transition duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-400 active:bg-primary-500;
   }
 }

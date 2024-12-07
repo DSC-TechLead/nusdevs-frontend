@@ -1,13 +1,9 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "./public/index.html"],
-  darkMode: "class",
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"], // Default sans-serif stack
-      },
       colors: {
         primary: {
           100: "var(--primary-100)",
@@ -15,6 +11,7 @@ export default {
           DEFAULT: "var(--primary)",
           400: "var(--primary-400)",
           500: "var(--primary-500)",
+          foreground: "var(--primary-foreground)",
         },
         neutral: {
           100: "var(--neutral-100)",
@@ -59,12 +56,6 @@ export default {
         h3: "var(--h3-size)",
         h4: "var(--h4-size)",
         small: "var(--small-size)",
-      },
-      fontWeight: {
-        light: "300",
-        normal: "400",
-        medium: "500",
-        bold: "700",
       },
     },
   },
