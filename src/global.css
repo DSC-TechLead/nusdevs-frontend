@@ -56,8 +56,19 @@
   }
 }
 
+html {
+  font-family: "Inter", sans-serif; /* Set Inter globally */
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: inherit; /* Ensures body inherits font from html */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
 }
