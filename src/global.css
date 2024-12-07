@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* -- Colors -- */
+    /* Primary  */
+    --primary-100: #faa385;
+    --primary-200: #f3825b;
+    --primary: #eb5e27;
+    --primary-400: #ae441a;
+    --primary-500: #752b0e;
+    --primary-foreground: #ffffff;
+
+    /* Neutrals  */
+    --neutral-100: #ffffff;
+    --neutral-200: ##f7f7f7;
+    --neutral: #f2f1f2;
+    --neutral-400: #3f3d39;
+    --neutral-500: #000000;
+
+    /* Semantic */
+    --success-100: #dcfce7;
+    --success-200: #86efac;
+    --success: #22c55e;
+    --success-400: #15803d;
+    --success-500: #14532d;
+    --success-foreground: #ffffff;
+
+    --warning-100: #fef9c3;
+    --warning-200: #fde047;
+    --warning: #eab308;
+    --warning-400: #a16207;
+    --warning-500: #713f12;
+
+    --danger-100: #fee2e2;
+    --danger-200: #fca5a5;
+    --danger: #ef4444;
+    --danger-400: #b91c1c;
+    --danger-500: #7f1d1d;
+
+    --info-100: #dbeafe;
+    --info-200: #93c5fd;
+    --info: #3b82f6;
+    --info-400: #1d4ed8;
+    --info-500: #1e3a8a;
+
+    /* -- Typography Sizing -- */
+    --h1-size: 32px;
+    --h2-size: 24px;
+    --h3-size: 20px;
+    --h4-size: 16px;
+    --p-size: 14px;
+    --small-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
