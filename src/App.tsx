@@ -1,24 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Dropdown from './components/dropdown';
+import DateField from './components/datefield';
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedRange, setSelectedRange] = useState<[Date, Date] | null>(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown
+        label='Dropdown'
+        description='Description'
+        placeholder='PlaceHolder'
+      />
+      <div className="space-y-4">
+      <DateField
+        label="Single Date"
+        type="single"
+        onChange={(date) => setSelectedDate(date as Date)}
+        description="description"
+        placeholder="Pick a date"
+      />
+      <DateField
+        label="Multi Date"
+        type="multi"
+        onChange={(dates) => setSelectedRange(dates as [Date, Date])}
+        description="description"
+        placeholder="Pick a range"
+      />
+    </div>
     </div>
   );
 }
