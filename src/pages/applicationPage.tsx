@@ -79,6 +79,7 @@ const ApplicationPage: React.FC<ApplicationPageProps> = ({
           )}
           {currentPageNum === 4 && (
             // TODO: use Buttons components
+            // The text here is temporary for button implementation later
             <div className="justify-start items-start flex">
               <div className="px-7 py-3 bg-[#eb5e27] rounded-[50px] justify-center items-center gap-2.5 flex">
                 <div className="text-center text-white text-base font-medium font-['Inter'] leading-normal">
