@@ -1,6 +1,6 @@
 import { FormHeader } from "../formSections"
 
-// TODO: add dummy questions similar to in contactInfo.tsx
+// TODO: add dummy questions similar to in contactInfo.tsx based on Ivy's examples
 
 const ScreeningQuestions: React.FC = () => {
     return (

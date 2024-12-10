@@ -24,7 +24,7 @@ const Resume: React.FC = () => {
         <>
             <div className="w-[80%] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
                 <FormHeader header="Resume" />
-                {/* Insert something here */}
+                {/* TODO: Insert document upload components */}
             </div>
         </>
     )
@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
         <>
             <div className="w-[80%] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
                 <FormHeader header="Portfolio" />
-                {/* Insert something here */}
+                {/* TODO: Insert document upload components */}
             </div>
         </>
     )
@@ -46,7 +46,7 @@ const CV: React.FC = () => {
         <>
             <div className="w-[80%] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
                 <FormHeader header="CV" />
-                {/* Insert something here */}
+                {/* TODO: Insert document upload components */}
             </div>
         </>
     )
