@@ -28,6 +28,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({
             <input
               name="check-select"
               type="checkbox"
+              checked={isRead}
               onChange={() => handleChange()}
               className="col-start-1 row-start-1 appearance-none rounded border 
                   border-gray-300 bg-white checked:border-[#EB5E27] 
