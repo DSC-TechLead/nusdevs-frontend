@@ -4,7 +4,24 @@ const checkSelections = [
   { id: "3", title: "Select 3" },
 ];
 
-const CheckSelect: React.FC = () => {
+interface CheckSelectProps {
+  selections: { id: string; title: string }[];
+  selected: string[];
+  onSelectionChange: (selected: string[]) => void;
+}
+
+const CheckSelect: React.FC<CheckSelectProps> = ({
+  selections,
+  selected,
+  onSelectionChange,
+}) => {
+  const handleChange = (id: string) => {
+    const updatedSelected = selected.includes(id)
+      ? selected.filter((item) => item !== id)
+      : [...selected, id];
+    onSelectionChange(updatedSelected);
+  };
+
   return (
     <fieldset>
       <legend className="text-left text-sm/6 font-semibold text-gray-900">
@@ -12,7 +29,7 @@ const CheckSelect: React.FC = () => {
       </legend>
       <p className="text-left text-sm/6 text-gray-600">Description</p>
       <div className="mt-2 space-y-1">
-        {checkSelections.map((checkSelection) => (
+        {selections.map((checkSelection) => (
           <div className="flex gap-3">
             <div className="flex h-6 shrink-0 items-center">
               <div className="group grid size-4 grid-cols-1">
@@ -20,6 +37,8 @@ const CheckSelect: React.FC = () => {
                   id={checkSelection.id}
                   name="check-select"
                   type="checkbox"
+                  checked={selected.includes(checkSelection.id)}
+                  onChange={() => handleChange(checkSelection.id)}
                   className="col-start-1 row-start-1 appearance-none rounded border 
                   border-gray-300 bg-white checked:border-[#EB5E27] 
                   checked:bg-[#EB5E27] indeterminate:border-[#EB5E27] focus-visible:outline 
@@ -37,7 +56,7 @@ const CheckSelect: React.FC = () => {
                 >
                   <path
                     d="M3 8L6 11L11 3.5"
-                    strokeWidth={0.01}
+                    strokeWidth={1}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="opacity-0 group-has-[:checked]:opacity-100"
