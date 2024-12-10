@@ -1,24 +1,33 @@
-const radioSelections = [
-  { id: "1", title: "Select 1" },
-  { id: "2", title: "Select 2" },
-  { id: "3", title: "Select 3" },
-];
+interface RadioSelectProps {
+  selectTitle: string;
+  selections: { id: string; title: string }[];
+  onSelectionChange: (selected: string) => void;
+}
 
-const RadioSelect: React.FC = () => {
+const RadioSelect: React.FC<RadioSelectProps> = ({
+  selectTitle,
+  selections,
+  onSelectionChange,
+}) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onSelectionChange(event.target.id);
+  };
+
   return (
     <fieldset>
       <legend className="text-left text-sm/6 font-semibold text-gray-900">
-        Single Select Question
+        {selectTitle}
       </legend>
       <p className="text-left text-sm/6 text-gray-600">Description</p>
       <div className="mt-2 space-y-1">
-        {radioSelections.map((radioSeletion) => (
+        {selections.map((radioSeletion) => (
           <div key={radioSeletion.id} className="flex items-center">
             <input
               defaultChecked={radioSeletion.id === "1"}
               id={radioSeletion.id}
               name="single-select"
               type="radio"
+              onChange={(event) => handleChange(event)}
               className="relative size-4 appearance-none rounded-full border border-gray-300 
               bg-white before:absolute before:inset-1 before:rounded-full before:bg-white 
               checked:border-[#EB5E27] checked:bg-[#EB5E27] focus-visible:outline 

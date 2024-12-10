@@ -11,6 +11,11 @@ function App() {
   ];
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [selectId, setSelectId] = useState<string>("1");
+
+  const handleRadioChange = (selectedId: string) => {
+    setSelectId(selectedId);
+  };
 
   const handleSelectionChange = (selectedIds: string[]) => {
     setSelectedIds(selectedIds);
@@ -19,7 +24,12 @@ function App() {
   return (
     <div className="App">
       <div className="space-y-5">
-        <RadioSelect />
+        <RadioSelect
+          selections={checkSelections}
+          selectTitle="Multi Select Questions"
+          onSelectionChange={handleRadioChange}
+        />
+        <div>{selectId}</div>
         <CheckSelect
           selections={checkSelections}
           selectTitle="Multi Select Questions"
