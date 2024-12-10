@@ -1,31 +1,33 @@
-const checkSelections = [
-  { id: "1", title: "Select 1" },
-  { id: "2", title: "Select 2" },
-  { id: "3", title: "Select 3" },
-];
+import { useState } from "react";
 
 interface CheckSelectProps {
+  selectTitle: string;
   selections: { id: string; title: string }[];
-  selected: string[];
   onSelectionChange: (selected: string[]) => void;
 }
 
 const CheckSelect: React.FC<CheckSelectProps> = ({
+  selectTitle,
   selections,
-  selected,
   onSelectionChange,
 }) => {
-  const handleChange = (id: string) => {
-    const updatedSelected = selected.includes(id)
-      ? selected.filter((item) => item !== id)
-      : [...selected, id];
-    onSelectionChange(updatedSelected);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const checkedId = event.target.id;
+    if (event.target.checked) {
+      setSelectedIds([...selectedIds, checkedId]);
+      onSelectionChange([...selectedIds, checkedId]);
+    } else {
+      setSelectedIds(selectedIds.filter((id) => id !== checkedId));
+      onSelectionChange(selectedIds.filter((id) => id !== checkedId));
+    }
   };
 
   return (
     <fieldset>
       <legend className="text-left text-sm/6 font-semibold text-gray-900">
-        Multi Select Question
+        {selectTitle}
       </legend>
       <p className="text-left text-sm/6 text-gray-600">Description</p>
       <div className="mt-2 space-y-1">
@@ -37,8 +39,8 @@ const CheckSelect: React.FC<CheckSelectProps> = ({
                   id={checkSelection.id}
                   name="check-select"
                   type="checkbox"
-                  checked={selected.includes(checkSelection.id)}
-                  onChange={() => handleChange(checkSelection.id)}
+                  checked={selectedIds.includes(checkSelection.id)}
+                  onChange={(event) => handleCheckboxChange(event)}
                   className="col-start-1 row-start-1 appearance-none rounded border 
                   border-gray-300 bg-white checked:border-[#EB5E27] 
                   checked:bg-[#EB5E27] indeterminate:border-[#EB5E27] focus-visible:outline 
