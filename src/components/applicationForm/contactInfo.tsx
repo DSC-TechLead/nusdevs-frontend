@@ -1,19 +1,42 @@
+import { FormHeader, FormQuestion } from "../formSections"
+
+const questions = [
+    {
+        question: "First Name",
+        type: "Text Input Short"
+    },
+    {
+        question: "Last Name",
+        type: "Text Input Short"
+    },
+    {
+        question: "Major",
+        type: "Dropdown"
+    },
+    {
+        question: "Year of Study",
+        type: "Dropdown"
+    },
+    {
+        question: "Phone Number",
+        type: "Text Input Short"
+    },
+    {
+        question: "School Email",
+        type: "Text Input Short"
+    },
+    {
+        question: "Telegram Handle",
+        type: "Text Input Short"
+    },
+]
+
 const ContactInfo: React.FC = () => {
     return (
         <div className="w-[80%] h-[70vh] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
-            <div className="flex-col justify-start items-start gap-0 inline-flex">
-                <div className="text-black text-2xl font-bold font-['Inter']">Contact Info</div>
-            </div>
-            <div className="w-full h-[68px] flex-col justify-start items-start">
-                <div className="h-[68px] flex-col justify-start items-start gap-2 flex">
-                    <div className="h-[18px] flex-col justify-start items-start gap-0.5 flex">
-                        <div className="text-neutral-500 text-sm font-bold font-['Inter'] leading-[18px]">First Name*</div>
-                    </div>
-                    <div className="w-full h-[42px] px-4 py-3 bg-gray-100 rounded-md border border-gray-300 justify-start items-center gap-2.5 inline-flex">
-                        <div className="basis-0 text-neutral-400 text-sm font-normal font-['Inter'] leading-[18px]">Ivy</div>
-                    </div>
-                </div>
-            </div>
+            <FormHeader header="Contact Info" />
+            {/* TODO: This needs to be changed to follow the questions list declared above */}
+            <FormQuestion question="Question here" type="Type here" />
         </div>
     )
 }

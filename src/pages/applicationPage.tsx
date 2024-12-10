@@ -5,11 +5,11 @@ import UploadDocument from "../components/applicationForm/uploadDocument"
 import ScreeningQuestions from "../components/applicationForm/screeningQuestions"
 import PrivacyPolicy from "../components/applicationForm/privacyPolicy"
 
-interface ApplicationPage2Props {
+interface ApplicationPageProps {
     requestName: string,
     topLevelQuestion: string,
 }
-const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLevelQuestion }) => {
+const ApplicationPage: React.FC<ApplicationPageProps> = ({ requestName, topLevelQuestion }) => {
     const [currentPageNum, setCurrentPageNum] = useState(1)
 
     return (
@@ -19,11 +19,11 @@ const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLev
             </div>
             <div className="h-[70vh] w-full overflow-auto">
                 {
-                    currentPageNum == 1
+                    currentPageNum === 1
                         ? <ContactInfo />
-                        : currentPageNum == 2
+                        : currentPageNum === 2
                             ? <UploadDocument />
-                            : currentPageNum == 3
+                            : currentPageNum === 3
                                 ? <ScreeningQuestions />
                                 : <PrivacyPolicy />
                 }
@@ -33,6 +33,7 @@ const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLev
                 <div className="justify-start items-center gap-[9px] flex"></div>
                 <div className="justify-start items-start flex">
                     {currentPageNum > 1 &&
+                        // TODO: use Link Buttons components
                         <div className="justify-start items-start flex">
                             <div
                                 className="px-7 py-3 bg-transparent rounded-[50px] justify-center items-center gap-2.5 flex"
@@ -42,6 +43,7 @@ const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLev
                             </div>
                         </div>}
                     {currentPageNum < 4 &&
+                        // TODO: use Buttons components
                         <div className="justify-start items-start flex">
                             <div
                                 className="px-7 py-3 bg-[#eb5e27] rounded-[50px] justify-center items-center gap-2.5 flex"
@@ -50,7 +52,8 @@ const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLev
                                 <div className="text-center text-white text-base font-medium font-['Inter'] leading-normal">Next</div>
                             </div>
                         </div>}
-                    {currentPageNum == 4 &&
+                    {currentPageNum === 4 &&
+                        // TODO: use Buttons components
                         <div className="justify-start items-start flex">
                             <div className="px-7 py-3 bg-[#eb5e27] rounded-[50px] justify-center items-center gap-2.5 flex">
                                 <div className="text-center text-white text-base font-medium font-['Inter'] leading-normal">Submit</div>
@@ -62,4 +65,4 @@ const ApplicationPage2: React.FC<ApplicationPage2Props> = ({ requestName, topLev
     )
 }
 
-export default ApplicationPage2
+export default ApplicationPage

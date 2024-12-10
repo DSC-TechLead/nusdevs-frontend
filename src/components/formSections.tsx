@@ -1,38 +1,31 @@
-interface FormInputsSectionProps {
-    topLevelQuestion: string,
+interface FormHeaderProps {
+    header: string,
     subtitle?: string,
 }
-export const FormInputsSection: React.FC<FormInputsSectionProps> = ({ topLevelQuestion, subtitle }) => {
+export const FormHeader: React.FC<FormHeaderProps> = ({ header, subtitle }) => {
     return (
-        <div className="w-[80%] min-h-[70vh] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
-            <div className="flex-col justify-start items-start gap-0 inline-flex">
-                <div className="text-black text-2xl font-bold font-['Inter']">{topLevelQuestion}</div>
-                {subtitle && <div className="text-black/50 text-xs font-normal font-['Inter'] leading-[18px]">{subtitle}</div>}
-            </div>
-            <div className="w-full h-[68px] flex-col justify-start items-start">
-                <div className="h-[68px] flex-col justify-start items-start gap-2 flex">
-                    <div className="h-[18px] flex-col justify-start items-start gap-0.5 flex">
-                        <div className="text-neutral-500 text-sm font-bold font-['Inter'] leading-[18px]">First Name*</div>
-                    </div>
-                    <div className="w-full h-[42px] px-4 py-3 bg-gray-100 rounded-md border border-gray-300 justify-start items-center gap-2.5 inline-flex">
-                        <div className="basis-0 text-neutral-400 text-sm font-normal font-['Inter'] leading-[18px]">Ivy</div>
-                    </div>
-                </div>
-            </div>
+        <div className="flex-col justify-start items-start gap-0 inline-flex">
+            <div className="text-black text-2xl font-bold font-['Inter']">{header}</div>
+            {subtitle && <div className="text-black/50 text-xs font-normal font-['Inter'] leading-[18px]">{subtitle}</div>}
         </div>
     )
 }
 
-interface FormHeaderOnlySectionProps {
-    topLevelQuestion: string,
-    subtitle?: string,
+interface FormQuestionProps {
+    question: string,
+    type: string,
 }
-export const FormHeaderOnlySection: React.FC<FormHeaderOnlySectionProps> = ({ topLevelQuestion, subtitle }) => {
+export const FormQuestion: React.FC<FormQuestionProps> = ({ question, type }) => {
+    {/* Edit this based on the type of the question, e.g. text input, select, date, dropdown, etc */}
     return (
-        <div className="w-[80%] min-h-[70vh] px-[24px] py-[48px] bg-white rounded-2xl flex-col gap-8 inline-flex overflow-auto">
-            <div className="flex-col justify-start items-start gap-0 inline-flex">
-                <div className="text-black text-2xl font-bold font-['Inter']">{topLevelQuestion}</div>
-                {subtitle && <div className="text-black/50 text-xs font-normal font-['Inter'] leading-[18px]">{subtitle}</div>}
+        <div className="w-full h-[68px] flex-col justify-start items-start">
+            <div className="h-[68px] flex-col justify-start items-start gap-2 flex">
+                <div className="h-[18px] flex-col justify-start items-start gap-0.5 flex">
+                    <div className="text-neutral-500 text-sm font-bold font-['Inter'] leading-[18px]">{question}</div>
+                </div>
+                <div className="w-full h-[42px] px-4 py-3 bg-gray-100 rounded-md border border-gray-300 justify-start items-center gap-2.5 inline-flex">
+
+                </div>
             </div>
         </div>
     )
