@@ -24,12 +24,12 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className=" p-6 w-96">
+    <div className="flex flex-col items-start gap-2 w-[398px] ml-10 mb-20">
       {/* Dropdown Title */}
-      <h2 className="text-left font-bold ">{label}</h2>
+      <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{label}</h2>
 
       {/* Description */}
-      <p className="text-left mb-2.5">
+      <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">
         {description}
       </p>
 

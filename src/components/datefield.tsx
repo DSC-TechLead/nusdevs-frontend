@@ -55,9 +55,9 @@ const DateField: React.FC<DateFieldProps> = ({
   };
 
   return (
-    <div className="date-field w-[600px] p-6">
-      <h2 className="text-left font-bold">{label}</h2>
-      <p className="text-left text-gray-500 mb-2.5">{description}</p>
+    <div className="flex flex-col justify-end items-start w-[367px] gap-2 ml-10">
+      <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{label}</h2>
+      <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">{description}</p>
       <div>
         {type === 'single' ? (
           <div className="flex flex-col space-y-2">
