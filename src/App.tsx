@@ -1,42 +1,25 @@
-import { useState } from "react";
+import logo from "./logo.svg";
 import "./App.css";
-import CheckSelect from "./components/checkSelect";
-import RadioSelect from "./components/radioSelect";
 
 function App() {
-  const checkSelections = [
-    { id: "1", title: "Select 1" },
-    { id: "2", title: "Select 2" },
-    { id: "3", title: "Select 3" },
-  ];
-
-  const [selectedIds, setSelectedIds] = useState<string[]>([]);
-  const [selectId, setSelectId] = useState<string>("1");
-
-  const handleRadioChange = (selectedId: string) => {
-    setSelectId(selectedId);
-  };
-
-  const handleSelectionChange = (selectedIds: string[]) => {
-    setSelectedIds(selectedIds);
-  };
 
   return (
     <div className="App">
-      <div className="space-y-5">
-        <RadioSelect
-          selections={checkSelections}
-          selectTitle="Multi Select Questions"
-          onSelectionChange={handleRadioChange}
-        />
-        <div>{selectId}</div>
-        <CheckSelect
-          selections={checkSelections}
-          selectTitle="Multi Select Questions"
-          onSelectionChange={handleSelectionChange}
-        />
-        <div>{selectedIds}</div>
-      </div>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p className="text-red-400">
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <button className="btn btn-primary">Test</button>
+      </header>
     </div>
   );
 }
