@@ -55,12 +55,12 @@ const DateField: React.FC<DateFieldProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-end items-start w-[367px] gap-2 ml-10">
+    <div className="flex flex-col justify-end items-start w-[367px] gap-2">
       <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{label}</h2>
       <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">{description}</p>
-      <div>
+      <div className="w-full">
         {type === 'single' ? (
-          <div className="flex flex-col space-y-2">
+          <div>
             <input
               type="date"
               value={selectedStartDate ? selectedStartDate.toISOString().split('T')[0] : ''}
@@ -69,8 +69,8 @@ const DateField: React.FC<DateFieldProps> = ({
               onFocus={handleStartFocus} // Focus handler for single date input
               onBlur={handleStartBlur}   // Blur handler for single date input
               className={`w-full text-left border p-2 rounded-md ${
-                isStartDateOpen ? 'border-orange-600' : 'border-gray-300'
-              } focus:outline-none focus:border-orange-600 hover:border-orange-600`}
+                isStartDateOpen ? 'border-[#EB5E27]' : 'border-gray-300'
+              } focus:outline-none focus:border-[#EB5E27] hover:border-[#EB5E27]`}
             />
           </div>
         ) : (
@@ -85,11 +85,11 @@ const DateField: React.FC<DateFieldProps> = ({
                 onFocus={handleStartFocus} // Focus handler for start date input
                 onBlur={handleStartBlur}   // Blur handler for start date input
                 className={`w-full text-left border p-2 rounded-md ${
-                  isStartDateOpen ? 'border-orange-600' : 'border-gray-300'
-                } focus:outline-none focus:border-orange-600 hover:border-orange-600`}
+                  isStartDateOpen ? 'border-[#EB5E27]' : 'border-gray-300'
+                } focus:outline-none focus:border-[#EB5E27] hover:border-[#EB5E27]`}
               />
             </div>
-            <p className="flex"> - </p>
+            <p className="flex"> _ </p>
             <div className="flex flex-col space-y-2 w-1/2">
               <input
                 type="date"
@@ -99,8 +99,8 @@ const DateField: React.FC<DateFieldProps> = ({
                 onFocus={handleEndFocus} // Focus handler for end date input
                 onBlur={handleEndBlur}   // Blur handler for end date input
                 className={`w-full text-left border p-2 rounded-md ${
-                  isEndDateOpen ? 'border-orange-600' : 'border-gray-300'
-                } focus:outline-none focus:border-orange-600 hover:border-orange-600`}
+                  isEndDateOpen ? 'border-[#EB5E27]' : 'border-gray-300'
+                } focus:outline-none focus:border-[#EB5E27] hover:border-[#EB5E27]`}
               />
             </div>
           </div>

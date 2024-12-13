@@ -3,14 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Dropdown from './components/dropdown';
 import DateField from './components/datefield';
-import ScreeningQuestion from './pages/screeningquestion';
 
 function App() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedRange, setSelectedRange] = useState<[Date, Date] | null>(null);
 
   return (
-    <div className="App">
+    <div className="ml-10 mt-10 space-y-10">
       <Dropdown
         label='Dropdown'
         description='Description'
@@ -31,10 +30,6 @@ function App() {
           description="Description"
           placeholder="Pick a range"
         />
-
-        <ScreeningQuestion>
-          
-        </ScreeningQuestion>
       </div>
     </div>
   );

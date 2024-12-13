@@ -24,9 +24,9 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-start gap-2 w-[398px] ml-10 mb-20">
+    <div className="flex flex-col items-start gap-2 w-[398px]">
       {/* Dropdown Title */}
-      <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{label}</h2>
+      <h2 className="text-[#171717] font-inter text-sm/6 font-bold leading-[18px]">{label}</h2>
 
       {/* Description */}
       <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">
@@ -37,7 +37,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <button
         onClick={toggleDropdown}
         className={`w-full text-left border border-gray-300 p-2 rounded-md flex justify-between items-center ${
-            isOpen ? "border-orange-600" : "hover:border-orange-600"
+            isOpen ? "border-[#EB5E27]" : "hover:border-[#EB5E27]"
           } transition duration-200`}
       >
         <span>{selected || placeholder}</span>
@@ -79,7 +79,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               <button
                 key={index}
                 onClick={() => selectOption(option)}
-                className="block w-full text-left px-4 py-2 hover:bg-orange-600 hover:text-black rounded-md transition duration-200"
+                className="block w-full text-left px-4 py-2 hover:bg-[#EB5E27] hover:text-black rounded-md transition duration-200"
               >
                 {option}
               </button>
