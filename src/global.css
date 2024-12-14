@@ -6,19 +6,20 @@
   :root {
     /* -- Colors -- */
     /* Primary  */
-    --primary-100: #faa385;
+    --primary-100: #FFF0E9;
     --primary-200: #f3825b;
     --primary: #eb5e27;
-    --primary-400: #ae441a;
+    --primary-400: #BC3F0E;
     --primary-500: #752b0e;
     --primary-foreground: #ffffff;
 
     /* Neutrals  */
-    --neutral-100: #ffffff;
-    --neutral-200: ##f7f7f7;
-    --neutral: #f2f1f2;
-    --neutral-400: #3f3d39;
-    --neutral-500: #000000;
+    --neutral-100: #F3F4F6;
+    --neutral-200: #D4D5D6;
+    --neutral: #B6B8BC;
+    --neutral-400: #727272;
+    --neutral-500: #46433E;
+    --neutral-foreground: #ffffff;
 
     /* Semantic */
     --success-100: #dcfce7;
@@ -36,7 +37,7 @@
 
     --danger-100: #fee2e2;
     --danger-200: #fca5a5;
-    --danger: #ef4444;
+    --danger: #F81F1F;
     --danger-400: #b91c1c;
     --danger-500: #7f1d1d;
 
