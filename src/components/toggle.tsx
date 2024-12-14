@@ -3,13 +3,23 @@
 import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
-const Toggle = () => {
-  const [enabled, setEnabled] = useState(false);
+interface ToggleProps {
+  status: boolean;
+  onToggleChange: (toggle: boolean) => void;
+}
+
+const Toggle: React.FC<ToggleProps> = ({ status, onToggleChange }) => {
+  const [enabled, setEnabled] = useState(status);
+
+  const handleToggleChange = (toggle: boolean) => {
+    setEnabled(toggle);
+    onToggleChange(toggle);
+  };
 
   return (
     <Switch
       checked={enabled}
-      onChange={setEnabled}
+      onChange={handleToggleChange}
       className="group relative inline-flex h-6 w-11 shrink-0 cursor-pointer 
       rounded-full border-2 border-transparent bg-gray-200 transition-colors 
       duration-200 ease-in-out focus:outline-none focus:ring-2 
