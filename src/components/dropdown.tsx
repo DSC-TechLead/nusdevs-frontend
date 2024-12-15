@@ -1,16 +1,13 @@
 import React, { useState } from "react";
+import { ErrorProps } from "../interfaces/errorInterface";
 
-interface DropdownProps {
-    label: string;
-    description: string;
-    placeholder?: string;
-  }
+interface DropdownProps extends ErrorProps {
+  label: string;
+  description: string;
+  placeholder?: string;
+}
 
-const Dropdown: React.FC<DropdownProps> = ({
-    label,
-    description,
-    placeholder,
-}) => {
+const Dropdown: React.FC<DropdownProps> = (props: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 
@@ -26,48 +23,47 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className="flex flex-col items-start gap-2 w-[398px]">
       {/* Dropdown Title */}
-      <h2 className="text-[#171717] font-inter text-sm/6 font-bold leading-[18px]">{label}</h2>
+      <h2 className="text-[#171717] font-inter text-sm/6 font-bold leading-[18px]">{props.label}</h2>
 
       {/* Description */}
       <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">
-        {description}
+        {props.description}
       </p>
 
       {/* Dropdown Trigger */}
       <button
         onClick={toggleDropdown}
-        className={`w-full text-left border border-gray-300 p-2 rounded-md flex justify-between items-center ${
-            isOpen ? "border-[#EB5E27]" : "hover:border-[#EB5E27]"
+        className={`w-full text-left border border-gray-300 p-2 rounded-md flex justify-between items-center ${isOpen ? "border-[#EB5E27]" : "hover:border-[#EB5E27]"
           } transition duration-200`}
       >
-        <span>{selected || placeholder}</span>
+        <span>{selected || props.placeholder}</span>
         {isOpen ? (
-            <svg
-              className="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M14.77 12.79a.75.75 0 01-1.06-.02L10 9.293l-3.71 3.475a.75.75 0 01-1.04-1.08l4.25-4a.75.75 0 011.04 0l4.25 4a.75.75 0 01-.02 1.06z"
-                clipRule="evenodd"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 10.707l3.71-3.475a.75.75 0 011.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01.02-1.06z"
-                clipRule="evenodd"
-              />
-            </svg>
-          )
+          <svg
+            className="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M14.77 12.79a.75.75 0 01-1.06-.02L10 9.293l-3.71 3.475a.75.75 0 01-1.04-1.08l4.25-4a.75.75 0 011.04 0l4.25 4a.75.75 0 01-.02 1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
+        ) : (
+          <svg
+            className="w-5 h-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.707l3.71-3.475a.75.75 0 011.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01.02-1.06z"
+              clipRule="evenodd"
+            />
+          </svg>
+        )
         }
       </button>
 
@@ -87,6 +83,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         </div>
       )}
+      {props.error && <div className="text-[#F81F1F] text-[12px]">{props.errorMessage}</div>}
     </div>
   );
 };

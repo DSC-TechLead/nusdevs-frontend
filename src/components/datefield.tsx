@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { ErrorProps } from '../interfaces/errorInterface';
 
-interface DateFieldProps {
+interface DateFieldProps extends ErrorProps {
   label: string;
   description: string;
   type: 'single' | 'multi'; // 'single' for selecting a single date, 'multi' for multiple dates
@@ -10,17 +11,9 @@ interface DateFieldProps {
   placeholder?: string;
 }
 
-const DateField: React.FC<DateFieldProps> = ({
-  label,
-  description,
-  type,
-  onChange,
-  startDate,
-  endDate,
-  placeholder = 'Select Date',
-}) => {
-  const [selectedStartDate, setSelectedStartDate] = useState<Date | null>(startDate || null);
-  const [selectedEndDate, setSelectedEndDate] = useState<Date | null>(endDate || null);
+const DateField: React.FC<DateFieldProps> = (props: DateFieldProps) => {
+  const [selectedStartDate, setSelectedStartDate] = useState<Date | null>(props.startDate || null);
+  const [selectedEndDate, setSelectedEndDate] = useState<Date | null>(props.endDate || null);
   
   // Separate focus states for start and end date
   const [isStartDateOpen, setIsStartDateOpen] = useState(false);
@@ -28,7 +21,7 @@ const DateField: React.FC<DateFieldProps> = ({
 
   // Handle date change for single date or range
   const handleDateChange = (date: Date | [Date, Date] | null) => {
-    onChange(date);
+    props.onChange(date);
     if (Array.isArray(date)) {
       setSelectedStartDate(date[0]);
       setSelectedEndDate(date[1]);
@@ -56,16 +49,16 @@ const DateField: React.FC<DateFieldProps> = ({
 
   return (
     <div className="flex flex-col justify-end items-start w-[367px] gap-2">
-      <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{label}</h2>
-      <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">{description}</p>
+      <h2 className="text-[#171717] font-inter text-sm font-bold leading-[18px]">{props.label}</h2>
+      <p className="text-[#A3A3A3] font-inter text-xs font-normal leading-[18px]">{props.description}</p>
       <div className="w-full">
-        {type === 'single' ? (
+        {props.type === 'single' ? (
           <div>
             <input
               type="date"
               value={selectedStartDate ? selectedStartDate.toISOString().split('T')[0] : ''}
               onChange={(e) => handleDateChange(new Date(e.target.value))}
-              placeholder={placeholder}
+              placeholder={props.placeholder}
               onFocus={handleStartFocus} // Focus handler for single date input
               onBlur={handleStartBlur}   // Blur handler for single date input
               className={`w-full text-left border p-2 rounded-md ${
@@ -106,6 +99,7 @@ const DateField: React.FC<DateFieldProps> = ({
           </div>
         )}
       </div>
+      {props.error && <div className="text-[#F81F1F] text-[12px]">{props.errorMessage}</div>}
     </div>
   );
 };
