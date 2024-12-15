@@ -1,31 +1,25 @@
 import logo from "./logo.svg";
 import "./App.css";
-import CheckSelect from "./components/checkSelect";
-import RadioSelect from "./components/radioSelect";
-import DateField from "./components/datefield";
-import Dropdown from "./components/dropdown";
 
 function App() {
-  const selections = [
-    {
-      id: "1",
-      title: "One"
-    },
-    {
-      id: "2",
-      title: "Two"
-    },
-    {
-      id: "3",
-      title: "Three"
-    },
-  ]
+
   return (
-    <div className="App flex flex-col gap-4">
-      <CheckSelect selectTitle="Title" selections={selections} onSelectionChange={() => { }} error={false} />
-      <RadioSelect selectTitle="Title" selections={selections} onSelectionChange={() => { }} error={true} errorMessage="This field is required"/>
-      <DateField label="Date" description="Description" type="single" onChange={() => {}} error={true} errorMessage="This field is required"/>
-      <Dropdown label="Dropdown" description="Description" error={true} errorMessage="This field is required"/>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p className="text-red-400">
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <button className="btn btn-primary">Test</button>
+      </header>
     </div>
   );
 }
