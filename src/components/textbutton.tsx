@@ -4,13 +4,13 @@ interface TextButtonProps {
   text: string;
   icon?: React.ReactNode;
   onClick?: () => void;
-  className?: string;
+  className?: string; 
 }
 
 const TextButton: React.FC<TextButtonProps> = ({ text, icon, onClick, className }) => (
   <button
     onClick={onClick}
-    className={`btn btn-primary gap-2 ${className}`}
+    className={`flex items-center gap-2 px-4 py-2 text-white rounded-full bg-[#EB5E27] hover:bg-[#EB5E27] active:bg-[#BA4A1F] focus:outline-none focus:ring-2 focus:ring-[#EB5E27] ${className}`}
   >
     {icon && <span>{icon}</span>}
     <span>{text}</span>

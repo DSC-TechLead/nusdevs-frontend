@@ -56,7 +56,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
   };
 
   return (
-    <div className={`flex flex-col w-full max-w-[400px] font-sans px-2 py-2 ${disabled ? 'pointer-events-none cursor-not-allowed' : ''}`}>
+    <div className={`flex flex-col w-full max-w-[400px] font-sans ${disabled ? 'pointer-events-none cursor-not-allowed' : ''}`}>
       <label className="cursor-pointer block w-full">
         <input
           ref={fileInputRef}
@@ -95,7 +95,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
               setHelperText('');
             }}
           >
-            <div className="bg-[#b1b0b0] text-white font-bold text-sm p-2 rounded w-[60px] h-[78px] flex justify-center items-center ml-0">
+            <div className="bg-[#b1b0b0] text-white font-bold text-sm p-2 rounded w-[60px] h-[80px] flex justify-center items-center ml-0">
               PDF
             </div>
             <div className="flex flex-col flex-1">
