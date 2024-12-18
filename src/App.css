@@ -44,3 +44,26 @@
 html {
   background-color: #f2f1f2;
 }
+
+/* TODO: TEMPORARY CSS FOR ERROR ANIMATION, PLEASE MIGRATE LATER */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(-4px);
+  }
+  30% {
+    transform: translateX(6px);
+  }
+  45% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
