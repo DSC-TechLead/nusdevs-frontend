@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface TextInputProps {
   placeholder: string;
@@ -6,6 +6,8 @@ interface TextInputProps {
   description?: string;
   maxLength?: number;
   height?: number;
+  textDisabled?: boolean;
+  enableCount?: boolean;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -14,6 +16,8 @@ const TextInput: React.FC<TextInputProps> = ({
   description = "This input is self-handled",
   maxLength = 50,
   height = 1,
+  textDisabled = true,
+  enableCount = true,
 }) => {
   const [value, setValue] = useState<string>("");
 
@@ -26,10 +30,12 @@ const TextInput: React.FC<TextInputProps> = ({
 
   return (
     <div className="w-full max-w-md mb-4">
-      <label className="block text-sm font-bold text-gray-800 mb-1">
-        {label}
-      </label>
-      <p className="text-sm text-gray-500 mb-2">{description}</p>
+      <div className="text-left">
+        <label className="block text-sm font-bold text-gray-800 mb-1">
+          {label}
+        </label>
+        <p className="text-sm text-gray-500 mb-2">{description}</p>
+      </div>
       <div>
         <textarea
           placeholder={placeholder}
@@ -38,11 +44,14 @@ const TextInput: React.FC<TextInputProps> = ({
           className="w-full p-2.5 border border-gray-300 rounded-md shadow-sm resize-none focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-300"
           rows={height}
           style={{ overflow: "hidden" }}
+          disabled={textDisabled}
         />
       </div>
-      <div className="text-right mt-1 text-xs text-gray-500">
-        {value.length}/{maxLength}
-      </div>
+      {enableCount && (
+        <div className="text-right mt-1 text-xs text-gray-500">
+          {value.length}/{maxLength}
+        </div>
+      )}
     </div>
   );
 };
