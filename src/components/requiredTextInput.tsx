@@ -67,7 +67,7 @@ const RequiredTextInput = forwardRef<RequiredTextInputRef, RequiredTextInputProp
           onChange={handleInputChange}
           className={`w-full p-2.5 border rounded-md shadow-sm resize-none transition-all focus:outline-none ${
             isInvalid
-              ? "border-red-500 focus:ring-2 focus:ring-red-300"
+              ? "border-red-500 focus:ring-2 focus:ring-red-300 animate-shake"
               : "border-gray-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-300"
           }`}
           rows={height}
