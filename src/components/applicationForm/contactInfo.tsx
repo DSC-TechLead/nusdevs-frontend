@@ -9,9 +9,10 @@ import {
 } from "@headlessui/react";
 
 import { FormHeader, FormQuestion } from "../formSections";
-import TextInput from "../textInput";
 
 import TextButton from "../textButton";
+import TextInput from "../textInput";
+
 
 const questions = [
   {
@@ -70,7 +71,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
   schoolEmail = "bob@u.nus.edu",
   telegram = "@bob",
 }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const contactValues = {
     firstName,
     lastName,
