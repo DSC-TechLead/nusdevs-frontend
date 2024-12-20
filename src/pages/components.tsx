@@ -1,8 +1,8 @@
 import React from "react";
 import IconButton from "../components/iconbutton";
 import LinkButton from "../components/linkbutton";
-import TextInput from "../components/textinput";
-import TextButton from "../components/textbutton";
+import TextInput from "../components/textInput";
+import TextButton from "../components/textButton";
 import FileUpload from "../components/fileupload";
 import { FaPlus, FaShoppingCart } from "react-icons/fa";
 
